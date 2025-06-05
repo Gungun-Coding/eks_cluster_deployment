@@ -40,7 +40,11 @@ resource "aws_eks_node_group" "node-grp" {
   cluster_name    = aws_eks_cluster.ankit-cluster.name
   node_group_name = "pc-node-group"
   node_role_arn   = aws_iam_role.worker.arn
-  subnet_ids      = data.aws_subnets.available-subnets.ids
+  #subnet_ids      = data.aws_subnets.available-subnets.ids
+  subnet_ids = [
+    "subnet-064060b6947c62a54",
+    "subnet-07f58f491f381fd9a"
+  ]
   capacity_type   = "ON_DEMAND"
   disk_size       = "20"
   instance_types  = ["t2.micro"]
