@@ -4,6 +4,9 @@ data "aws_subnets" "available-subnets"{
         values = ["Our-Public-*"]
     }
 }
+output "fetched_subnet_ids" {
+  value = data.aws_subnets.available-subnets.ids
+}
 
 resource "aws_eks_cluster" "ankit-cluster" {
   name     = "ankit-cluster"
