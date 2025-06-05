@@ -5,8 +5,8 @@
 #    }
 #}
 
-resource "aws_eks_cluster" "ankit-cluster" {
-  name     = "ankit-cluster"
+resource "aws_eks_cluster" "Pradip-cluster" {
+  name     = "Pradip-cluster"
   role_arn = aws_iam_role.example.arn
 
 vpc_config {
